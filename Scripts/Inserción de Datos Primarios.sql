@@ -22,6 +22,11 @@ INSERT INTO Ubigeo (nombre) VALUES ('Arequipa');
 INSERT INTO Ubigeo (nombre) VALUES ('Cusco');
 INSERT INTO Ubigeo (nombre) VALUES ('Trujillo');
 INSERT INTO Ubigeo (nombre) VALUES ('Chiclayo');
+INSERT INTO Ubigeo (nombre) VALUES ('Callao');
+INSERT INTO Ubigeo (nombre) VALUES ('Huancayo');
+INSERT INTO Ubigeo (nombre) VALUES ('Huancavelica');
+INSERT INTO Ubigeo (nombre) VALUES ('Piura');
+INSERT INTO Ubigeo (nombre) VALUES ('Tacna');
 
 -- Inserts para Estado_Acta
 INSERT INTO Estado_Acta (nombre) VALUES ('Aprobado');

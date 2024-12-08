@@ -164,7 +164,7 @@ INSERT INTO Alumnos (id_persona, id_escuela, id_codigo, estado)
 VALUES (14, 4, '20221104D', 1); -- Alumno Jorge Martinez, Escuela de Física, Estado "Activo"
 
 INSERT INTO Alumnos (id_persona, id_escuela, id_codigo, estado) 
-VALUES (15, 1, '20221105E', 1); -- Alumna Valeria Torres, Escuela de Ingeniería de Sistemas, Estado "Activo"
+VALUES (15, 1, '20221105E', 2); -- Alumna Valeria Torres, Escuela de Ingeniería de Sistemas, Estado "Activo"
 
 INSERT INTO Alumnos (id_persona, id_escuela, id_codigo, estado) 
 VALUES (16, 2, '20221106F', 1); -- Alumno Pablo Fernandez, Escuela de Ingeniería Eléctrica, Estado "Activo"
