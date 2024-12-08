@@ -1,11 +1,15 @@
 -- ========================
 -- INSERTS PARA TABLA FACULTAD
 -- ========================
-BEGIN
+
 INSERT INTO Facultad (nombre_facultad, descripcion) VALUES ('Facultad de Ingeniería', 'Facultad de carreras de ingeniería');
+COMMIT;
+
 INSERT INTO Facultad (nombre_facultad, descripcion) VALUES ('Facultad de Ciencias', 'Facultad de carreras científicas');
+COMMIT;
+
 INSERT INTO Facultad (nombre_facultad, descripcion) VALUES ('Facultad de Humanidades', 'Facultad de carreras humanísticas');
-END;
+COMMIT;
 
 select * from FACULTAD;
 -- ========================
@@ -70,6 +74,7 @@ VALUES ('Literatura Medieval', 'LIT301', 3, 3);
 -- ========================
 -- INSERTS PARA TABLA CURSOS_PLAN_ESTUDIOS
 -- ========================
+
 INSERT INTO Cursos_Plan_Estudios (id_curso, id_plan, semestre) VALUES (1, 1, 1);
 INSERT INTO Cursos_Plan_Estudios (id_curso, id_plan, semestre) VALUES (2, 2, 2);
 INSERT INTO Cursos_Plan_Estudios (id_curso, id_plan, semestre) VALUES (3, 2, 3);
@@ -77,6 +82,7 @@ INSERT INTO Cursos_Plan_Estudios (id_curso, id_plan, semestre) VALUES (3, 2, 3);
 -- ========================
 -- INSERTS PARA TABLA MATRICULA
 -- ========================
+
 INSERT INTO Matricula (id_alumno, id_curso, semestre_academico, fecha_matricula) 
 VALUES (1, 1, '2024-I', TO_DATE('2024-03-01', 'YYYY-MM-DD'));
 
@@ -89,6 +95,7 @@ VALUES (3, 3, '2024-I', TO_DATE('2024-03-03', 'YYYY-MM-DD'));
 -- ========================
 -- INSERTS PARA TABLA ACTA_CALIFICACION
 -- ========================
+
 INSERT INTO Acta_Calificacion (id_alumno, id_curso, fecha_evaluacion, calificacion) 
 VALUES (1, 1, TO_DATE('2024-06-15', 'YYYY-MM-DD'), 18.5);
 
