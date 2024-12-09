@@ -1,43 +1,61 @@
-<%@ page import="java.sql.Connection" %>
-<%@ page import="java.sql.Statement" %>
-<%@ page import="java.sql.ResultSet" %>
-<%@ page import="Javas.ConexionDB" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Prueba Conexión Oracle</title>
-</head>
-<body>
-    <h1>Prueba de Conexión a Oracle</h1>
-
-    <%
-        Connection conexion = null;
-        try {
-            // Obtener conexión
-            conexion = ConexionDB.obtenerConexion();
-            
-            // Ejemplo de consulta SQL
-            String sql = "SELECT * FROM Facultad";
-            Statement stmt = conexion.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-
-            out.println("<table border='1'>");
-            out.println("<tr><th>ID Facultad</th><th>Nombre</th><th>Descripción</th></tr>");
-            while (rs.next()) {
-                out.println("<tr>");
-                out.println("<td>" + rs.getInt("id_facultad") + "</td>");
-                out.println("<td>" + rs.getString("nombre_facultad") + "</td>");
-                out.println("<td>" + rs.getString("descripcion") + "</td>");
-                out.println("</tr>");
+    <head>
+        <meta charset="UTF-8">
+        <title>Inicio - Enrutador</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f8f9fa;
+                color: #333;
             }
-            out.println("</table>");
-        } catch (Exception e) {
-            out.println("<p>Error: " + e.getMessage() + "</p>");
-            e.printStackTrace();
-        } finally {
-            // Cerrar conexión
-            ConexionDB.cerrarConexion(conexion);
-        }
-    %>
-</body>
+            h1 {
+                text-align: center;
+                color: #4CAF50;
+                margin-top: 30px;
+            }
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 70vh;
+                flex-direction: column;
+            }
+            .menu {
+                list-style-type: none;
+                padding: 0;
+                margin: 20px 0;
+            }
+            .menu li {
+                margin: 10px 0;
+            }
+            .menu a {
+                text-decoration: none;
+                color: white;
+                background-color: #4CAF50;
+                padding: 10px 20px;
+                border-radius: 5px;
+                display: inline-block;
+                font-size: 18px;
+                transition: background-color 0.3s;
+            }
+            .menu a:hover {
+                background-color: #45a049;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Bienvenido al Sistema</h1>
+        <div class="container">
+            <p>Seleccione una opciÃ³n:</p>
+            <ul class="menu">
+                <li><a href="creacionusuario.jsp">Crear Usuario</a></li>
+                <li><a href="FacultadServlet">Ver Facultades</a></li>
+                <li><a href="MatriculaServlet">MatrÃ­cula</a></li>
+            </ul>
+        </div>
+    </body>
 </html>

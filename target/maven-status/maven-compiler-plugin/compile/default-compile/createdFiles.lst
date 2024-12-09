@@ -1,2 +1,10 @@
-Javas\ConexionDB.class
+Servlets\EscuelaServlet.class
+Servlets\CrearUsuarioServlet.class
+Servlets\FacultadServlet.class
+Javas\Escuela.class
+Javas\PlanEstudios.class
 Javas\Facultad.class
+Javas\Curso.class
+Servlets\CursoServlet.class
+Servlets\PlanEstudiosServlet.class
+Javas\ConexionDB.class
