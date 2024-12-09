@@ -36,6 +36,14 @@ INSERT INTO Dato_Personales (nombre, apellido, dni, sexo, ubigeo, fecha_nacimien
 VALUES ('Sofia', 'Mendoza', '12345687', 2, 10, TO_DATE('1984-11-03', 'YYYY-MM-DD'), 'Av. Salaverry 101', '987654330', 'sofia.mendoza@uni.edu.pe');
 
 
+-- Planes de estudios para distintas escuelas
+INSERT INTO Plan_Estudios (cod_plan, año_creacion, id_escuela) VALUES ('P202', 2020, 1); -- Plan 2020 para Ciencias de la Computación
+INSERT INTO Plan_Estudios (cod_plan, año_creacion, id_escuela) VALUES ('P203', 2021, 2); -- Plan 2021 para FISICA
+INSERT INTO Plan_Estudios (cod_plan, año_creacion, id_escuela) VALUES ('P204', 2022, 3); -- Plan 2022 para Matemática
+INSERT INTO Plan_Estudios (cod_plan, año_creacion, id_escuela) VALUES ('P205', 2023, 4); -- Plan 2023 para Ingeniería Civil
+
+
+
 -- Alumnos
 
 INSERT INTO Dato_Personales (nombre, apellido, dni, sexo, ubigeo, fecha_nacimiento, direccion, telefono, email)
@@ -102,44 +110,38 @@ INSERT INTO Profesores (id_persona, id_dpto_academico)
 VALUES (10, 2); -- Profesora Sofia Mendoza, Departamento de Ingeniería Eléctrica
 
 -- Alumnos
-
+select * from alumnos;
 -- Asumiendo que los IDs de las escuelas y estados ya existen
-INSERT INTO Alumnos (id_persona, id_escuela, id_codigo, estado) 
-VALUES (11, 1, '20221101A', 1); -- Alumna Andrea Castillo, Escuela de Ingeniería de Sistemas, Estado "Activo"
+INSERT INTO Alumnos (id_persona, id_escuela, id_codigo,id_plan, estado) 
+VALUES (11, 1, '20221101A', 1,1); -- Alumna Andrea Castillo, Escuela de Ingeniería de Sistemas, Estado "Activo"
 
-INSERT INTO Alumnos (id_persona, id_escuela, id_codigo, estado) 
-VALUES (12, 2, '20221102B', 1); -- Alumno Luis Ramirez, Escuela de Ingeniería Eléctrica, Estado "Activo"
+INSERT INTO Alumnos (id_persona, id_escuela, id_codigo,id_plan, estado) 
+VALUES (12, 2, '20221102B', 2,1); -- Alumno Luis Ramirez, Escuela de Ingeniería Eléctrica, Estado "Activo"
 
-INSERT INTO Alumnos (id_persona, id_escuela, id_codigo, estado) 
-VALUES (13, 3, '20221103C', 1); -- Alumna Clara Sanchez, Escuela de Matemáticas, Estado "Activo"
+INSERT INTO Alumnos (id_persona, id_escuela, id_codigo,id_plan, estado) 
+VALUES (13, 3, '20221103C', 3,1); -- Alumna Clara Sanchez, Escuela de Matemáticas, Estado "Activo"
 
-INSERT INTO Alumnos (id_persona, id_escuela, id_codigo, estado) 
-VALUES (14, 4, '20221104D', 1); -- Alumno Jorge Martinez, Escuela de Física, Estado "Activo"
+INSERT INTO Alumnos (id_persona, id_escuela, id_codigo,id_plan, estado) 
+VALUES (14, 4, '20221104D', 4,1); -- Alumno Jorge Martinez, Escuela de Física, Estado "Activo"
 
-INSERT INTO Alumnos (id_persona, id_escuela, id_codigo, estado) 
-VALUES (15, 1, '20221105E', 2); -- Alumna Valeria Torres, Escuela de Ingeniería de Sistemas, Estado "Activo"
+INSERT INTO Alumnos (id_persona, id_escuela, id_codigo,id_plan, estado) 
+VALUES (15, 1, '20221105E', 1,2); -- Alumna Valeria Torres, Escuela de Ingeniería de Sistemas, Estado "Activo"
 
-INSERT INTO Alumnos (id_persona, id_escuela, id_codigo, estado) 
-VALUES (16, 2, '20221106F', 1); -- Alumno Pablo Fernandez, Escuela de Ingeniería Eléctrica, Estado "Activo"
+INSERT INTO Alumnos (id_persona, id_escuela, id_codigo,id_plan, estado) 
+VALUES (16, 2, '20221106F', 2,1); -- Alumno Pablo Fernandez, Escuela de Ingeniería Eléctrica, Estado "Activo"
 
-INSERT INTO Alumnos (id_persona, id_escuela, id_codigo, estado) 
-VALUES (17, 3, '20221107G', 1); -- Alumna Lucia Diaz, Escuela de Matemáticas, Estado "Activo"
+INSERT INTO Alumnos (id_persona, id_escuela, id_codigo,id_plan, estado) 
+VALUES (17, 3, '20221107G', 3,1); -- Alumna Lucia Diaz, Escuela de Matemáticas, Estado "Activo"
 
-INSERT INTO Alumnos (id_persona, id_escuela, id_codigo, estado) 
-VALUES (18, 4, '20221108H', 1); -- Alumno Carlos Vega, Escuela de Física, Estado "Activo"
+INSERT INTO Alumnos (id_persona, id_escuela, id_codigo,id_plan, estado) 
+VALUES (18, 4, '20221108H', 4,1); -- Alumno Carlos Vega, Escuela de Física, Estado "Activo"
 
-INSERT INTO Alumnos (id_persona, id_escuela, id_codigo, estado) 
-VALUES (19, 1, '20221109I', 1); -- Alumna Monica Gomez, Escuela de Ingeniería de Sistemas, Estado "Activo"
+INSERT INTO Alumnos (id_persona, id_escuela, id_codigo,id_plan, estado) 
+VALUES (19, 1, '20221109I', 1,1); -- Alumna Monica Gomez, Escuela de Ingeniería de Sistemas, Estado "Activo"
 
-INSERT INTO Alumnos (id_persona, id_escuela, id_codigo, estado) 
-VALUES (20, 2, '20221110J', 1); -- Alumno Raul Navarro, Escuela de Ingeniería Eléctrica, Estado "Activo"
+INSERT INTO Alumnos (id_persona, id_escuela, id_codigo,id_plan, estado) 
+VALUES (20, 2, '20221110J', 2,1); -- Alumno Raul Navarro, Escuela de Ingeniería Eléctrica, Estado "Activo"
 
-
--- Planes de estudios para distintas escuelas
-INSERT INTO Plan_Estudios (cod_plan, año_creacion, id_escuela) VALUES ('P202', 2020, 1); -- Plan 2020 para Ingeniería de Sistemas
-INSERT INTO Plan_Estudios (cod_plan, año_creacion, id_escuela) VALUES ('P203', 2021, 2); -- Plan 2021 para Ingeniería Eléctrica
-INSERT INTO Plan_Estudios (cod_plan, año_creacion, id_escuela) VALUES ('P204', 2022, 3); -- Plan 2022 para Matemáticas
-INSERT INTO Plan_Estudios (cod_plan, año_creacion, id_escuela) VALUES ('P205', 2023, 4); -- Plan 2023 para Física
 
 
 -- Cursos asignados a los planes de estudio
@@ -209,3 +211,6 @@ VALUES (4, 4, TO_DATE('2024-06-23', 'YYYY-MM-DD'), 16.25, 1);
 
 -- Confirmar los cambios
 COMMIT;
+
+
+

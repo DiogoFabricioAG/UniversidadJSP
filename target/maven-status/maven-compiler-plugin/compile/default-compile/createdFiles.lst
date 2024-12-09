@@ -2,6 +2,7 @@ Servlets\EscuelaServlet.class
 Servlets\CrearUsuarioServlet.class
 Servlets\FacultadServlet.class
 Javas\Escuela.class
+Servlets\VerificarPersonaServlet.class
 Javas\PlanEstudios.class
 Javas\Facultad.class
 Javas\Curso.class

@@ -95,9 +95,3 @@ INSERT INTO Dpto_Academico (nombre_dpto, id_escuela) VALUES ('Redes y Comunicaci
 -- Confirmar los cambios
 COMMIT;
 
-select * from Dato_Personales;
-select * from ALUMNOS;
-
-INSERT INTO Alumnos (id_persona, id_escuela, id_codigo, estado) VALUES ((SELECT id_persona FROM Dato_Personales WHERE dni = '71434915'), 2, '20221109A', 1);
-
-SELECT id_persona FROM Dato_Personales WHERE dni = '71434915';

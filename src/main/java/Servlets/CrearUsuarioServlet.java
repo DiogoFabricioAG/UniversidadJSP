@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -49,18 +47,23 @@ public class CrearUsuarioServlet extends HttpServlet {
             String idCodigo = request.getParameter("id_codigo");
             int estado = Integer.parseInt(request.getParameter("estado"));
 
-            String sqlAlumno = "INSERT INTO Alumnos (id_persona, id_escuela, id_codigo, estado) VALUES ((SELECT id_persona FROM Dato_Personales WHERE dni = ?), ?, ?, ?)";
+            String sqlAlumno = "INSERT INTO Alumnos (id_persona, id_escuela, id_codigo,id_plan, estado) VALUES ((SELECT id_persona FROM Dato_Personales WHERE dni = ?), ?, ?,(SELECT ID_PLAN " +
+"FROM   Plan_Estudios " +
+"WHERE ID_ESCUELA = ? " +
+"ORDER BY AÑO_CREACION DESC " +
+"FETCH FIRST 1 ROWS ONLY), ?)";
             PreparedStatement psAlumno = conn.prepareStatement(sqlAlumno);
             psAlumno.setString(1, dni);
             psAlumno.setInt(2, idEscuela);
             psAlumno.setString(3, idCodigo);
-            psAlumno.setInt(4, estado);
+            psAlumno.setInt(4, idEscuela);
+            psAlumno.setInt(5, estado);
             psAlumno.executeUpdate();
 
-            response.sendRedirect("success.jsp"); // Redirigir a una página de éxito
+            response.sendRedirect("success.jsp"); 
         } catch (Exception e) {
             e.printStackTrace();
-            response.sendRedirect("error.jsp"); // Redirigir a una página de error
+            response.sendRedirect("error.jsp");
         }
     }
 }

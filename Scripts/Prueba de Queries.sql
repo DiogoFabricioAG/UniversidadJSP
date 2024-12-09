@@ -98,3 +98,13 @@ GROUP BY
     pe.cod_plan
 ORDER BY 
     cantidad_cursos DESC;
+
+-- 7. Escoger el plan ACtualizado para la inscripción del usuario.
+
+SELECT ID_PLAN 
+FROM   Plan_Estudios
+WHERE ID_ESCUELA = 3
+ORDER BY AÑO_CREACION DESC
+FETCH FIRST 1 ROWS ONLY;
+
+SELECT * FROM ALUMNOS;
