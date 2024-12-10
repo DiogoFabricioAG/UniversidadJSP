@@ -7,8 +7,8 @@
 <body>
     <h1>Verificación de Persona</h1>
     <form action="VerificarPersonaServlet" method="post">
-        <label for="email">Correo electrónico:</label>
-        <input type="email" name="email" id="email" required><br><br>
+        <label for="codigo">Código de Alumno:</label>
+        <input type="text" name="codigo" id="codigo" required><br><br>
 
         <label for="dni">DNI:</label>
         <input type="text" name="dni" id="dni" required><br><br>

@@ -1,11 +1,15 @@
-Servlets\EscuelaServlet.class
+Servlets\MatriculaServlet.class
 Servlets\CrearUsuarioServlet.class
 Servlets\FacultadServlet.class
 Javas\Escuela.class
 Servlets\VerificarPersonaServlet.class
 Javas\PlanEstudios.class
+Javas\CursoDTO.class
+Javas\ConexionDB.class
+Servlets\ConfirmarMatriculaServlet.class
+Servlets\EscuelaServlet.class
 Javas\Facultad.class
 Javas\Curso.class
+Javas\Alumno.class
 Servlets\CursoServlet.class
 Servlets\PlanEstudiosServlet.class
-Javas\ConexionDB.class

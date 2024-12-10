@@ -18,26 +18,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Diogo
- */
 @WebServlet(name = "VerificarPersonaServlet", urlPatterns = {"/VerificarPersonaServlet"})
 public class VerificarPersonaServlet extends HttpServlet {
-   
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String correo = request.getParameter("email");
+        String idCodigo = request.getParameter("codigo");
         String dni = request.getParameter("dni");
 
         boolean personaValida = false;
-
-        if (correo != null && dni != null) {
+        System.out.println("Valor obtenido: "+idCodigo + dni);
+        if (idCodigo != null && dni != null && !idCodigo.isEmpty() && !dni.isEmpty()) {
             try (Connection conn = ConexionDB.obtenerConexion()) {
-                String sql = "SELECT COUNT(*) FROM Dato_Personales WHERE email = ? AND dni = ?";
+
+                String sql = "SELECT COUNT(*) FROM Alumnos a "
+                           + "INNER JOIN Dato_Personales dp ON a.id_persona = dp.id_persona "
+                           + "WHERE a.id_codigo = ? AND dp.dni = ?";
+                
                 try (PreparedStatement ps = conn.prepareStatement(sql)) {
-                    ps.setString(1, correo);
+                    ps.setString(1, idCodigo);
                     ps.setString(2, dni);
 
                     ResultSet rs = ps.executeQuery();
@@ -52,12 +51,11 @@ public class VerificarPersonaServlet extends HttpServlet {
         }
 
         if (personaValida) {
-            // Redirigir a la página de matrícula con datos prellenados
-            response.sendRedirect("matricula.jsp?email=" + correo + "&dni=" + dni);
+            response.sendRedirect("MatriculaServlet?id_codigo=" + idCodigo + "&dni=" + dni);
         } else {
-            // Redirigir de vuelta con un mensaje de error
+            
             request.setAttribute("mensaje", "No se encontró ninguna persona con los datos ingresados.");
-            request.getRequestDispatcher("verificarPersona.jsp").forward(request, response);
+            request.getRequestDispatcher("verificarpersona.jsp").forward(request, response);
         }
     }
 }

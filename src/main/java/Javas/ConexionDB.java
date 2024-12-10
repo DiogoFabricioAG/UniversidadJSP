@@ -8,7 +8,7 @@ public class ConexionDB {
     private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe"; // Cambia 'xe' si tu SID es diferente
     private static final String USUARIO = "SYSTEM"; 
     private static final String CONTRASENA = "123";
-
+    
     public static Connection obtenerConexion() {
         Connection conexion = null;
 
