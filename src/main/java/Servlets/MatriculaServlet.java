@@ -34,7 +34,6 @@ public class MatriculaServlet extends HttpServlet {
         }
 
         try (Connection conn = ConexionDB.obtenerConexion()) {
-            // Obtener los datos del alumno
             String sql = "SELECT a.id_alumno, a.id_plan, p.nombre, p.apellido, p.dni, p.email "
                        + "FROM Alumnos a "
                        + "JOIN Dato_Personales p ON a.id_persona = p.id_persona "
@@ -55,31 +54,39 @@ public class MatriculaServlet extends HttpServlet {
                         rs.getInt("id_plan")
                     );
 
-                    // Establecer el alumno en el request
                     request.setAttribute("alumno", alumno);
 
-                    // Consulta para obtener los cursos disponibles
                     String sqlCursos = "SELECT c.id_curso, c.nombre_curso, c.codigo_curso, c.creditos, s.codigo_seccion "
-                                       + "FROM Cursos c "
-                                       + "JOIN Seccion s ON c.id_curso = s.id_curso "
-                                       + "WHERE c.id_plan = ? "
-                                       + "AND c.id_curso NOT IN ("
-                                       + "    SELECT ac.id_curso "
-                                       + "    FROM Acta_Calificacion ac "
-                                       + "    WHERE ac.id_alumno = ? "
-                                       + "    AND ac.calificacion >= 11 "
-                                       + ") "
-                                       + "AND s.id_seccion NOT IN ("
-                                       + "    SELECT m.id_seccion "
-                                       + "    FROM Matricula m "
-                                       + "    WHERE m.id_alumno = ? "
-                                       + ")";
+                                        + "FROM Cursos c "
+                                        + "JOIN Seccion s ON c.id_curso = s.id_curso "
+                                        + "WHERE c.id_plan = ? "
+                                        + "AND c.id_curso NOT IN ("
+                                        + "    SELECT ac.id_curso "
+                                        + "    FROM Acta_Calificacion ac "
+                                        + "    WHERE ac.id_alumno = ? AND ac.calificacion >= 11"
+                                        + ") "
+                                        + "AND s.id_seccion NOT IN ("
+                                        + "    SELECT m.id_seccion "
+                                        + "    FROM Matricula m "
+                                        + "    WHERE m.id_alumno = ?"
+                                        + ") "
+                                        + "AND ("
+                                        + "    NOT EXISTS ("
+                                        + "        SELECT 1 FROM Requisitos r "
+                                        + "        WHERE r.id_curso_princ = c.id_curso "
+                                        + "        AND r.id_curso_requer NOT IN ("
+                                        + "            SELECT ac.id_curso "
+                                        + "            FROM Acta_Calificacion ac "
+                                        + "            WHERE ac.id_alumno = ? AND ac.calificacion >= 11"
+                                        + "        )"
+                                        + "    )"
+                                        + ")";
 
-                    // Ejecutar la consulta para obtener los cursos disponibles
                     try (PreparedStatement psCursos = conn.prepareStatement(sqlCursos)) {
                         psCursos.setInt(1, alumno.getIdPlanEstudios());
-                        psCursos.setInt(2, alumno.getIdAlumno());  // ID del alumno
-                        psCursos.setInt(3, alumno.getIdAlumno());  // ID del alumno para evitar matricula repetida
+                        psCursos.setInt(2, alumno.getIdAlumno());  
+                        psCursos.setInt(3, alumno.getIdAlumno());  
+                        psCursos.setInt(4, alumno.getIdAlumno());  
 
                         ResultSet rsCursos = psCursos.executeQuery();
 
@@ -95,14 +102,12 @@ public class MatriculaServlet extends HttpServlet {
                             cursosSecciones.add(cursoSeccion);
                         }
 
-                        // Si no se encontraron cursos disponibles
                         if (cursosSecciones.isEmpty()) {
                             request.setAttribute("mensaje", "No se encontraron cursos disponibles para este plan de estudios.");
                         } else {
                             request.setAttribute("cursosSecciones", cursosSecciones);
                         }
 
-                        // Redirigir a la página de matrícula
                         request.getRequestDispatcher("matricula.jsp").forward(request, response);
                     }
                 } else {

@@ -7,9 +7,11 @@ Javas\PlanEstudios.class
 Javas\CursoDTO.class
 Javas\ConexionDB.class
 Servlets\ConfirmarMatriculaServlet.class
+Javas\ActaCalificacionDTO.class
 Servlets\EscuelaServlet.class
 Javas\Facultad.class
 Javas\Curso.class
 Javas\Alumno.class
 Servlets\CursoServlet.class
+Servlets\ActasCalificacionServlet.class
 Servlets\PlanEstudiosServlet.class

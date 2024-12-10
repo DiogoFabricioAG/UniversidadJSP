@@ -107,4 +107,18 @@ WHERE ID_ESCUELA = 3
 ORDER BY AÑO_CREACION DESC
 FETCH FIRST 1 ROWS ONLY;
 
-SELECT * FROM ALUMNOS;
+SELECT id_codigo,DNI,id_plan FROM ALUMNOS a join DATO_PERSONALES dp on a.ID_PERSONA = dp.ID_PERSONA;
+
+
+
+INSERT INTO ACTA_CALIFICACION(ID_ALUMNO, ID_CURSO,FECHA_EVALUACION,CALIFICACION,ESTADO) VALUES (11,1,'23-10-2024',19,1); -- sIMULAMOS QUE YA APROBO ESE CURSO
+COMMIT;
+SELECT 
+    c1.nombre_curso AS curso_principal,
+    c2.nombre_curso AS curso_requerido
+FROM 
+    Requisitos r
+JOIN 
+    Cursos c1 ON r.id_curso_princ = c1.id_curso
+JOIN 
+    Cursos c2 ON r.id_curso_requer = c2.id_curso;

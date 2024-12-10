@@ -54,7 +54,8 @@
             <ul class="menu">
                 <li><a href="creacionusuario.jsp">Crear Usuario</a></li>
                 <li><a href="FacultadServlet">Ver Facultades</a></li>
-                <li><a href="verificarpersona.jsp">Matrícula</a></li>
+                <li><a href="verificarpersona.jsp?id=1">Matrícula</a></li>
+                <li><a href="verificarpersona.jsp?id=2">Consultar Acta</a></li>
             </ul>
         </div>
     </body>

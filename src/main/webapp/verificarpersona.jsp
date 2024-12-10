@@ -6,12 +6,19 @@
 </head>
 <body>
     <h1>Verificación de Persona</h1>
+    <% 
+        // Obtener el parámetro id de la URL
+        String id = request.getParameter("id");
+    %>
     <form action="VerificarPersonaServlet" method="post">
         <label for="codigo">Código de Alumno:</label>
         <input type="text" name="codigo" id="codigo" required><br><br>
 
         <label for="dni">DNI:</label>
         <input type="text" name="dni" id="dni" required><br><br>
+
+        <!-- Campo oculto para enviar el id -->
+        <input type="hidden" name="id" value="<%= id %>">
 
         <button type="submit">Verificar</button>
     </form>
@@ -27,5 +34,6 @@
        if (error != null) { %>
         <p style="color:red;">Error: <%= error %></p>
     <% } %>
+
 </body>
 </html>
