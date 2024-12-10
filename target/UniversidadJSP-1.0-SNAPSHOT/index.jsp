@@ -5,47 +5,66 @@
         <meta charset="UTF-8">
         <title>Inicio - Enrutador</title>
         <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f8f9fa;
-                color: #333;
-            }
-            h1 {
-                text-align: center;
-                color: #4CAF50;
-                margin-top: 30px;
-            }
-            .container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 70vh;
-                flex-direction: column;
-            }
-            .menu {
-                list-style-type: none;
-                padding: 0;
-                margin: 20px 0;
-            }
-            .menu li {
-                margin: 10px 0;
-            }
-            .menu a {
-                text-decoration: none;
-                color: white;
-                background-color: #4CAF50;
-                padding: 10px 20px;
-                border-radius: 5px;
-                display: inline-block;
-                font-size: 18px;
-                transition: background-color 0.3s;
-            }
-            .menu a:hover {
-                background-color: #45a049;
-            }
-        </style>
+        /* Estilos Globales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            color: #2c3e50;
+            font-size: 2.2em;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        /* Menú */
+        .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            margin: 15px 0;
+        }
+
+        .menu a {
+            display: block;
+            background-color: #3498db;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: #2980b9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
     </head>
     <body>
         <h1>Bienvenido al Sistema</h1>

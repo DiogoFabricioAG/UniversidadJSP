@@ -7,39 +7,66 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Listado de Cursos</title>
         <style>
-            body {
-                font-family: Arial, sans-serif;
-            }
-            h1 {
-                text-align: center;
-                color: #333;
-            }
-            table {
-                width: 70%;
-                margin: 20px auto;
-                border-collapse: collapse;
-            }
-            th, td {
-                border: 1px solid #ddd;
-                padding: 10px;
-                text-align: center;
-            }
-            th {
-                background-color: #4CAF50;
-                color: white;
-            }
-            tr:nth-child(even) {
-                background-color: #f2f2f2;
-            }
-            tr:hover {
-                background-color: #ddd;
-            }
-            p {
-                text-align: center;
-                color: red;
-                font-weight: bold;
-            }
-        </style>
+        /* Estilos Globales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 20px;
+            font-size: 2em;
+        }
+
+        /* Tabla de Cursos */
+        table {
+            width: 90%;
+            max-width: 800px;
+            margin: 30px auto;
+            border-collapse: collapse;
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #3498db;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #dfe6e9;
+        }
+
+        td {
+            color: #555;
+        }
+
+        /* Mensaje de No Datos */
+        p {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 30px;
+            color: #e74c3c;
+        }
+    </style>
+
     </head>
     <body>
         <h1>Cursos del Plan de Estudios</h1>

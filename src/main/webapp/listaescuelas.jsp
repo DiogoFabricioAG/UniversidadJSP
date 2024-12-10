@@ -7,49 +7,74 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Listado de Escuelas</title>
         <style>
-            body {
-                font-family: Arial, sans-serif;
-            }
-            h1 {
-                text-align: center;
-                color: #333;
-            }
-            table {
-                width: 70%;
-                margin: 20px auto;
-                border-collapse: collapse;
-            }
-            th, td {
-                border: 1px solid #ddd;
-                padding: 10px;
-                text-align: center;
-            }
-            th {
-                background-color: #4CAF50;
-                color: white;
-            }
-            tr:nth-child(even) {
-                background-color: #f2f2f2;
-            }
-            tr:hover {
-                background-color: #ddd;
-            }
-            p {
-                text-align: center;
-                color: red;
-                font-weight: bold;
-            }
-            a {
-                text-decoration: none;
-                color: white;
-                background-color: #4CAF50;
-                padding: 5px 10px;
-                border-radius: 5px;
-            }
-            a:hover {
-                background-color: #45a049;
-            }
-        </style>
+        /* Estilos Globales */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 20px;
+            font-size: 2.5em;
+        }
+
+        /* Tabla de Listado */
+        table {
+            width: 90%;
+            max-width: 900px;
+            margin: 30px auto;
+            border-collapse: collapse;
+            background: #ffffff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #2980b9;
+            color: #ffffff;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ecf0f1;
+        }
+
+        tr:hover {
+            background-color: #d6eaf8;
+        }
+
+        td a {
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        td a:hover {
+            color: #1abc9c;
+        }
+
+        /* Mensaje de No Datos */
+        p {
+            text-align: center;
+            font-size: 1.2em;
+            color: #e74c3c;
+            margin-top: 30px;
+        }
+    </style>
+
     </head>
     <body>
         <h1>Escuelas de la Facultad</h1>

@@ -7,38 +7,78 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Facultades</title>
         <style>
-            table {
-                width: 50%;
-                border-collapse: collapse;
-                margin: 20px auto;
-            }
-            th, td {
-                border: 1px solid black;
-                padding: 8px;
-                text-align: center;
-            }
-            th {
-                background-color: #f2f2f2;
-            }
-            h1 {
-                text-align: center;
-            }
-            .button-container form {
-                margin: 0;
-            }
-            button {
-                background-color: #4CAF50;
-                color: white;
-                border: none;
-                padding: 5px 10px;
-                cursor: pointer;
-                font-size: 14px;
-                border-radius: 5px;
-            }
-            button:hover {
-                background-color: #45a049;
-            }
-        </style>
+        /* Estilos Globales */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin: 20px 0;
+            font-size: 2.5em;
+        }
+
+        /* Tabla de Listado */
+        table {
+            width: 80%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #2980b9;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e6f7ff;
+        }
+
+        /* Botones */
+        .button-container button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .button-container button:hover {
+            background-color: #1abc9c;
+        }
+
+        /* Mensaje de No Datos */
+        p {
+            font-size: 1.2em;
+            text-align: center;
+            margin-top: 30px;
+            color: #e74c3c;
+        }
+    </style>
+
     </head>
     <body>
         <h1>Listado de Facultades</h1>

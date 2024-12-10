@@ -7,49 +7,74 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Planes de Estudio</title>
         <style>
-            body {
-                font-family: Arial, sans-serif;
-            }
-            h1 {
-                text-align: center;
-                color: #333;
-            }
-            table {
-                width: 70%;
-                margin: 20px auto;
-                border-collapse: collapse;
-            }
-            th, td {
-                border: 1px solid #ddd;
-                padding: 10px;
-                text-align: center;
-            }
-            th {
-                background-color: #4CAF50;
-                color: white;
-            }
-            tr:nth-child(even) {
-                background-color: #f2f2f2;
-            }
-            tr:hover {
-                background-color: #ddd;
-            }
-            p {
-                text-align: center;
-                color: red;
-                font-weight: bold;
-            }
-            a {
-                text-decoration: none;
-                color: white;
-                background-color: #4CAF50;
-                padding: 5px 10px;
-                border-radius: 5px;
-            }
-            a:hover {
-                background-color: #45a049;
-            }
-        </style>
+        /* Estilos Globales */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin: 20px 0;
+            font-size: 2.5em;
+        }
+
+        /* Tabla */
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #2c3e50;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #eaf5ff;
+        }
+
+        /* Enlaces */
+        a {
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #1abc9c;
+        }
+
+        /* Mensaje de No Datos */
+        p {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 30px;
+            color: #e74c3c;
+        }
+    </style>
+
     </head>
     <body>
         <h1>Planes de Estudio</h1>

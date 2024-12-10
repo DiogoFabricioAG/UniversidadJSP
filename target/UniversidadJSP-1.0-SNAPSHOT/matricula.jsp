@@ -4,6 +4,91 @@
 <html>
 <head>
     <title>Matricula de Cursos</title>
+    <style>
+        /* Estilos Globales */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h3, h4 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 2.5em;
+        }
+
+        h3, h4 {
+            font-size: 1.4em;
+            margin: 10px 0;
+        }
+
+        /* Contenedor del formulario */
+        form {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        /* Cursos disponibles */
+        div {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            font-size: 1.1em;
+            background-color: #f8f8f8;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        div:hover {
+            background-color: #eaf2ff;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        /* Botón de envío */
+        button {
+            display: block;
+            width: 30%;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 1.1em;
+            color: #fff;
+            background-color: #3498db;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1abc9c;
+        }
+
+        /* Mensaje sin cursos */
+        p {
+            text-align: center;
+            font-size: 1.2em;
+            color: #e74c3c;
+        }
+    </style>
+
 </head>
 <body>
     <h1>Matriculación de Cursos</h1>
